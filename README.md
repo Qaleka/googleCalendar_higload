@@ -292,7 +292,7 @@ SASI (SSTable-Attached Secondary Index)
     - title (вторичный индекс) - для точного поиска по полному названию календаря
 
 - Таблица Event:
-  - PRIMARY KEY ((user_id, calendar_id), time_start, id): Partition key: (user_id, calendar_id) — логично и шардируется по пользователю, Clustering: time_start для сортировки по времени, id — уникальность
+  - PRIMARY KEY ((user_id), time_start, id): Partition key: (user_id) — логично и шардируется по пользователю, Clustering: time_start для сортировки по времени, id — уникальность
   - Специальные индексы:
     - (time_start, time_finish) (SASI, SPARSE mode) - составной индекс для временного диапазона (сам запрос описан в 7 главе)
     - name (SASI, PREFIX mode) - для быстрого поиска событий по началу названия
@@ -332,9 +332,9 @@ RPS после денормализации:
 
 Cassandra автоматически делает шардирование при помощи token range. У каждого узла есть свой диапазон токенов.
 
-| User                 | Calendar | Event                 | Reminder      | Session | Elastic_Search | 
-| -------------------- |----------|-----------------------|---------------|---------|----------------|
-| id                   | user_id  | user_id + calendar_id | user_id       | user_id | username       |
+| User                 | Calendar | Event    | Reminder      | Session | Elastic_Search | 
+| -------------------- |----------|----------|---------------|---------|----------------|
+| id                   | user_id  | user_id  | user_id       | user_id | username       |
 
 - Elastic_Search: Шардирование по полю username рекомендуется для эффективного поиска, с учетом ограничения размера шарда в 50 GB.
 
@@ -354,6 +354,8 @@ CREATE KEYSPACE calendar_app WITH REPLICATION = {
 };
 ```
 Это значит, что каждая партиция будет иметь по 3 реплики в каждом DC. Cassandra сама разнесёт токены между узлами в каждом регионе.
+
+Внутри самой Cassandra будем использовать LOCAL_QUORUM - Cassandra будет использовать только узлы внутри этого DC.
 
 Репликация в Cassandra происходит на основе replication factor - это количество копий одной партиции, которые Cassandra будет хранить на разных узлах.
 RF = 3 — это индустриальный стандарт, и в большинстве случаев — оптимальный выбор. Cassandra позволяет настраивать репликацию по DC (data center).
