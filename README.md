@@ -469,18 +469,18 @@ InvitationService принимает участие в отправке приг
 
 ## Микросервисы
 
-| Сервис               | Целевая пиковая нагрузка приложения | Тип бизнес-логики | CPU  | RAM     | Net           |
-|----------------------|-------------------------------------|-------------------|------|---------|---------------|
-| AuthorizationService | 2 600 RPS                           | Лёгкая            | 26   | 2.6 GB  | 50 Mbit/s     |
-| UserService          | 1 100 RPS                           | Средняя           | 22   | 4.4 GB  | 20 Mbit/s     |
-| CalendarService      | 14 468 RPS                          | Лёгкая            | 145  | 14.5 GB | 300 Mbit/s    |
-| EventService         | 20 258 RPS                          | Тяжёлая           | 1015 | 100 GB  | 500 Mbit/s    |
-| InvitationService    | 11 576 RPS                          | Средняя           | 232  | 46.4 GB | 200 Mbit/s    |
-| ReminderService      | 5 788 RPS                           | Средняя           | 116  | 23.2 GB | 100 Mbit/s    |
-| SyncService          | 2 000 RPS                           | Средняя           | 40   | 8 GB    | 50 Mbit/s     |
-| EmailService         | 2 000 RPS                           | Лёгкая            | 20   | 2 GB    | 50 Mbit/s     |
-| API Gateway          | 52 090 RPS                          | Лёгкая            | 520  | 52 GB   | 1 Gbit/s      |
-| Reverse Proxy Layer  | 52 090 RPS                          | Лёгкая            | 520  | 52 GB   | 1 Gbit/s      |
+| Сервис               | Целевая пиковая нагрузка приложения | Тип бизнес-логики | CPU  | RAM     | Net        |
+|----------------------|-------------------------------------|-------------------|------|---------|------------|
+| AuthorizationService | 2 600 RPS                           | Лёгкая            | 26   | 2.6 GB  | 50 Mbit/s  |
+| UserService          | 1 100 RPS                           | Средняя           | 22   | 4.4 GB  | 20 Mbit/s  |
+| CalendarService      | 14 468 RPS                          | Лёгкая            | 145  | 14.5 GB | 300 Mbit/s |
+| EventService         | 20 258 RPS                          | Тяжёлая           | 1015 | 100 GB  | 500 Mbit/s |
+| InvitationService    | 11 576 RPS                          | Средняя           | 232  | 46.4 GB | 200 Mbit/s |
+| ReminderService      | 5 788 RPS                           | Средняя           | 116  | 23.2 GB | 100 Mbit/s |
+| SyncService          | 2 000 RPS                           | Средняя           | 40   | 8 GB    | 50 Mbit/s  |
+| EmailService         | 2 000 RPS                           | Лёгкая            | 20   | 2 GB    | 50 Mbit/s  |
+| API Gateway          | 52 090 RPS                          | Лёгкая            | 520  | 52 GB   | 1 Gbit/s   |
+| Reverse Proxy Layer  | 10 000 RPS                          | Лёгкая            | 102  | 14 GB   | 200 Mbit/s |
 
 ---
 
