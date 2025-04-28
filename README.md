@@ -502,7 +502,7 @@ InvitationService принимает участие в отправке приг
 | Cassandra (Events, Calendars, Reminders, Sessions) | 40 000 RPS    | 400  | 60 GB | ~176 PB       |
 | ElasticSearch (User Search)                  | 1 100 RPS        | 15   | 5 GB | 5 TB         |
 | Kafka Cluster (Event Bus)                    | 10 000 сообщений/сек | 100 | 10 GB | 5 TB      |
-| Локальное хранилище статики                  | -                | -    | -    | 10 TB        |
+
 
 
 ---
