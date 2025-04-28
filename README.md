@@ -428,7 +428,7 @@ API Gateway в Токио reverse-proxy'т запрос в Нью-Йорк:
 
 # 10. Схема проекта  
 
-![img_2.png](img_2.png)
+![img_3.png](img_3.png)
 
 Разбиение на микросервисы:
 - Можно менять ReminderService (например, перейти с email на пуши) без единой правки в CalendarService или EventService.
@@ -481,7 +481,7 @@ InvitationService принимает участие в отправке приг
 | Cassandra             | 40 000 RPS        | 400  | 60 GB | ~1.1 PB      |
 | ElasticSearch         | 1 100 RPS         | 15   | 5 GB | 5 TB         |
 | Kafka Cluster         | 10 000 сообщений/сек | 100 | 10 GB | 5 TB       |
-| Локальное хранилище статики | -          | -    | -    | 10 TB        |
+
 
 ---
 
